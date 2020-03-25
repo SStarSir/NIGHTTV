@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Night TV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+input[type=text], select, textarea {
+  width: 100%;
+  height: 20%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 5px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color:#bfe8c2;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 50%;
+}
+
+input[type=submit]:hover {
+  background-color: #bfe8c2;
+}
+
+.container {
+  border-radius: 5px;
+  height: 30%;
+  background-color: black;
+  padding: 5px;
+}
+
+
+body {
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: black;
+  background:#000;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  color: black;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+  color: black;
+}
+
+/* Style the header */
+.header {
+  padding: 1px;
+  text-align: center;
+  background: black;
+  color: #bf8ec2;
+  display: flex;
+  
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 20px;
+}
+
+
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: auto;
+  background-color:black;
+  width: 100%;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  width: 25%;
+  color: #bfe8c2;
+  border-top: 1px solid #bfe8c2;
+  border-bottom: 1px solid #bfe8c2;
+  text-align: center;
+  padding: 10px 0px;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #bf8ec2;
+  color: #bfe8c2;
+}
+
+/* Main column */
+.main {   
+  width: 100%;
+  background-color: black;
+  padding: 0px;
+  overflow: auto;
+}
+
+.conttext {   
+float: left;
+  width: 50%;
+  height: 400px;
+  background-color: black;
+  
+}
+.contimage {
+
+float:left;
+  width: 50%;
+  height: 400px;
+  background-color: black;
+  padding: 0px;
+
+}
+
+.imgresponsive {
+  width: 90%;
+  padding: 10px;
+}
+
+.footer {
+  display: grid;
+  bottom: 0;
+  padding: 10px; /* Some padding */
+  text-align: center; /* Center text*/
+  background: #bf8ec2; /* Grey background */ 
+  margin: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 97.55%;
+  height: 3%; 
+  color: black;
+}
+
+</style>
+</head>
+<body onload="startTime()">
+  <div id="page-container">
+    <div id="content-wrap">
+
+<div class="header">
+    <h1 style= "float:left;width:25%";>P104 </h1>
+    <h1 style= "float:left;width:25%";>NIGHT TV </h1>
+    <h1 id="heredate", style= "float:left;width:25%";>DATE</h1>
+    <h1 id="hereclock", style= "float:left;width:25%";>TIME</h1>
+
+    
+   
+   
+</div>
+
+    <script>
+  var d = new Date();
+document.getElementById("heredate").innerHTML =  d.toDateString();
+</script>
+
+<script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('hereclock').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+
+</script>
+
+
+
+<div class="navbar">
+  <a href="index.html">PLAY THE GAME...101</a>
+  <a href="howto.html">HOW TO PLAY...102</a>
+  <a href="about.html">ABOUT US...103</a>
+  <a href="contact.html">CONTACT US...104</a>
+</div>
+
+<div class="main">
+
+    <div class="conttext">
+    <h2 style="text-align: center; color: #bfe8c2;">CONTACT US</h2>
+    <h5 style="text-align: center; padding: 10px; color: whitesmoke;">Please use the contact form only for issues with your TV receiver. All other enquiries will be ignored.</h5>
+    
+    <div class="container">
+      <form action="mailto:moguposta@gmail.com" method="post" enctype="text/plain"
+      
+      >
+        <label for="fname">Email address</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:75px"></textarea>
+    
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    
+    <br>
+     </div>
+     
+     <div class="contimage">
+      <img src="source/img/pixeltvrepair.png" height="90%" alt="tv repair shop" class="imgresponsive">
+        
+        
+        <br>
+         </div>
+
+
+ </div>
+
+ <div class="footer">
+    <p style="font-size: x-large;margin: 10px;margin: auto; color: whitesmoke;">ALL CLAIMS OF TV SETS EXPLOSIONS WILL BE ADDRESSED TIMELY. WATCH WITH CONFIDENCE</p>
+  </div>
+
+
+
+
+
+  
+  </body>
+  </html>

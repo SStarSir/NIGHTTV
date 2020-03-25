@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Night TV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: black;
+  background:#000;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  color: black;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+  color: black;
+}
+
+/* Style the header */
+.header {
+  padding: 1px;
+  text-align: center;
+  background: black;
+  color: #bf8ec2;
+  display: flex;
+  
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 20px;
+}
+
+
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: auto;
+  background-color:black;
+  width: 100%;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  width: 25%;
+  color: #bfe8c2;
+  border-top: 1px solid #bfe8c2;
+  border-bottom: 1px solid #bfe8c2;
+  text-align: center;
+  padding: 10px 0px;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+a {
+  color: #9ac5f7;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #bf8ec2;
+  color: #bfe8c2;
+}
+
+/* Main column */
+.main {   
+  width: 100%;
+  background-color: black;
+  padding: 0px;
+  overflow: auto;
+}
+
+.conttext {   
+float: left;
+  width: 50%;
+  height: 400px;
+  background-color: black;
+  
+}
+.contimage {
+
+float:left;
+  width: 50%;
+  height: 400px;
+  background-color: black;
+  padding: 0px;
+
+}
+
+.imgresponsive {
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+}
+
+.footer {
+  display: grid;
+  bottom: 0;
+  padding: 10px; /* Some padding */
+  text-align: center; /* Center text*/
+  background: #bf8ec2; /* Grey background */ 
+  margin: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 97.55%;
+  height: 3%; 
+  color: black;
+}
+
+.video {
+    
+    margin-left: 35% ;
+    
+}
+
+</style>
+</head>
+<body onload="startTime()">
+  <div id="page-container">
+    <div id="content-wrap">
+
+<div class="header">
+    <h1 style= "float:left;width:25%";>P103 </h1>
+    <h1 style= "float:left;width:25%";>NIGHT TV </h1>
+    <h1 id="heredate", style= "float:left;width:25%";>DATE</h1>
+    <h1 id="hereclock", style= "float:left;width:25%";>TIME</h1>
+
+    
+   
+   
+</div>
+
+    <script>
+  var d = new Date();
+document.getElementById("heredate").innerHTML =  d.toDateString();
+</script>
+
+<script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('hereclock').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+
+</script>
+
+
+
+<div class="navbar">
+  <a href="index.html">PLAY THE GAME...101</a>
+  <a href="howto.html">HOW TO PLAY...102</a>
+  <a href="about.html">ABOUT US...103</a>
+  <a href="contact.html">CONTACT US...104</a>
+</div>
+
+<div class="main">
+
+    <div class="conttext">
+    <h2 style="text-align: center; color: #bfe8c2;">ABOUT US</h2>
+    <h5 style="text-align: center; padding: 10px; color: whitesmoke;">IFCATS Entertainment is committed to provide you the best night time TV entertainment.</h5>
+    <h2 style="text-align: center; color: #bfe8c2;">CREDITS</h2>
+    <h5 style="text-align: center; padding: 10px; color: whitesmoke;">All code has been written using <a href="https://www.w3schools.com/html/">W3Schools</a> as reference. The Javascript game has been written following the tutorial below.</h5>
+
+    <div class="video">
+    <iframe width="186.6" height="105" src="https://www.youtube.com/embed/R1S_NhKkvGA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <br>
+     </div>
+     
+     <div class="contimage">
+      <img src="source/img/pixeltvset.png" alt="cables connected to tv set" class="imgresponsive">
+        
+        
+        <br>
+         </div>
+
+
+ </div>
+
+ <div class="footer">
+    <p style="font-size: x-large;margin: 10px;margin: auto; color: whitesmoke;">TELETEXT HOLIDAYS: BOOK NOW YOUR NEXT RETRO HOLIDAYS</p>
+  </div>
+
+
+
+
+
+  
+  </body>
+  </html>
