@@ -68,7 +68,7 @@ const textNodes = [
   {
     id: 2,
     title: 'PROLOGUE',
-    text: 'Another night, another round. You are on the way for the umpteenth walk, trying to get tired enough to be able to turn a blind eye tonight.Your mind wanders and rethinks yesterdays job interview. You did your best but, according to them, the only other candidate was stronger. Certainly your face marked by insomnia did not help.',
+    text: 'Another night, another round. You are on the way for the umpteenth walk, trying to get tired enough to be able to sleep a wink tonight.Your mind wanders and rethinks the job interview you had yesterday. You did your best but, according to them, the only other candidate was stronger. Certainly your face marked by insomnia did not help.',
     options: [
       {
         text: 'Next',
